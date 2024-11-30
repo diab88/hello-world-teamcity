@@ -1,16 +1,15 @@
 plugins {
-    id 'java' // Applies the Java plugin
+    id 'java' // Apply the Java plugin
 }
 
 repositories {
     mavenCentral() // Use Maven Central repository
 }
 
-// This is a custom task for running the application
 tasks.register('run') {
     doLast {
         javaexec {
-            main = 'HelloWorld' // Main class to execute
+            main = 'HelloWorld'
             classpath = sourceSets.main.runtimeClasspath
         }
     }
