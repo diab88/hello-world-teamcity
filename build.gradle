@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.register('build') {
+    doLast {
+        println("Building the Hello World application...")
+        // Additional build logic if needed
+    }
+}
+
+tasks.register('run') {
+    doLast {
+        javaexec {
+            main = 'HelloWorld'
+            classpath = sourceSets.main.runtimeClasspath
+        }
+    }
+}
